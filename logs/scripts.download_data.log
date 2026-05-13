@@ -20,3 +20,24 @@
 2026-05-07 21:33:17,787 - scripts.download_data - WARNING - Failed to fetch data. Retrying in 20s
 2026-05-07 21:33:37,788 - scripts.download_data - ERROR - Failed to fetch data after 5 attempts.
 2026-05-07 21:33:37,788 - scripts.download_data - WARNING - No data fetched.
+2026-05-08 14:23:31,046 - scripts.download_data - WARNING - No existing data. Running full download.
+2026-05-08 14:23:31,242 - scripts.download_data - WARNING - Failed to fetch data. Retrying in 0s
+2026-05-08 14:23:31,294 - scripts.download_data - WARNING - Failed to fetch data. Retrying in 5s
+2026-05-08 14:23:36,366 - scripts.download_data - WARNING - Failed to fetch data. Retrying in 10s
+2026-05-08 14:23:46,459 - scripts.download_data - WARNING - Failed to fetch data. Retrying in 15s
+2026-05-08 14:24:01,635 - scripts.download_data - WARNING - Failed to fetch data. Retrying in 20s
+2026-05-08 14:24:21,635 - scripts.download_data - ERROR - Failed to fetch data after 5 attempts.
+2026-05-08 14:24:21,636 - scripts.download_data - WARNING - No data fetched.
+2026-05-08 14:32:17,711 - scripts.download_data - WARNING - No existing data. Running full download.
+2026-05-08 14:32:18,476 - scripts.download_data - WARNING - Failed to fetch data. Retrying in 0s
+2026-05-08 14:32:19,031 - scripts.download_data - WARNING - Failed to fetch data. Retrying in 5s
+2026-05-08 14:32:24,688 - scripts.download_data - WARNING - Failed to fetch data. Retrying in 10s
+2026-05-08 14:32:35,263 - scripts.download_data - WARNING - Failed to fetch data. Retrying in 15s
+2026-05-08 14:32:50,859 - scripts.download_data - WARNING - Failed to fetch data. Retrying in 20s
+2026-05-08 14:33:10,860 - scripts.download_data - ERROR - Failed to fetch data after 5 attempts.
+2026-05-08 14:33:10,860 - scripts.download_data - WARNING - No data fetched.
+2026-05-08 16:45:18,123 - scripts.download_data - WARNING - No existing data. Running full download.
+2026-05-08 16:45:19,009 - scripts.download_data - INFO - Fetched 1595 rows from Yahoo Finance
+2026-05-08 17:00:18,228 - scripts.download_data - WARNING - No existing data. Running full download.
+2026-05-08 17:00:18,976 - scripts.download_data - INFO - Fetched 1595 rows from Yahoo Finance
+2026-05-08 17:00:18,998 - scripts.download_data - INFO - Saved 1595 rows to C:\Users\yeech\Documents\Project\apple_stock_price_prediction\data\raw\aapl.parquet

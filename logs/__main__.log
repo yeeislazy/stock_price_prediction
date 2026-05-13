@@ -1,0 +1,199 @@
+2026-05-10 20:37:02,464 - __main__ - INFO - Epoch 1, Train Loss: 25519.3369, Val Loss: N/A
+2026-05-10 20:37:02,847 - __main__ - INFO - Epoch 2, Train Loss: 25359.8994, Val Loss: N/A
+2026-05-10 20:37:03,246 - __main__ - INFO - Epoch 3, Train Loss: 25452.7188, Val Loss: N/A
+2026-05-10 20:37:03,570 - __main__ - INFO - Epoch 4, Train Loss: 25770.7662, Val Loss: N/A
+2026-05-10 20:37:03,891 - __main__ - INFO - Epoch 5, Train Loss: 25498.0179, Val Loss: N/A
+2026-05-10 20:37:04,267 - __main__ - INFO - Epoch 6, Train Loss: 25229.7816, Val Loss: N/A
+2026-05-10 20:37:04,614 - __main__ - INFO - Epoch 7, Train Loss: 25874.9879, Val Loss: N/A
+2026-05-10 20:37:04,918 - __main__ - INFO - Epoch 8, Train Loss: 25208.6394, Val Loss: N/A
+2026-05-10 20:37:05,249 - __main__ - INFO - Epoch 9, Train Loss: 25381.0576, Val Loss: N/A
+2026-05-10 20:37:05,561 - __main__ - INFO - Epoch 10, Train Loss: 25704.7744, Val Loss: N/A
+2026-05-10 20:37:05,902 - __main__ - INFO - Epoch 11, Train Loss: 25669.1824, Val Loss: N/A
+2026-05-10 20:37:06,274 - __main__ - INFO - Epoch 12, Train Loss: 25930.5633, Val Loss: N/A
+2026-05-10 20:37:06,594 - __main__ - INFO - Epoch 13, Train Loss: 25532.5925, Val Loss: N/A
+2026-05-10 20:37:06,915 - __main__ - INFO - Epoch 14, Train Loss: 25143.5410, Val Loss: N/A
+2026-05-10 20:37:07,228 - __main__ - INFO - Epoch 15, Train Loss: 25521.9211, Val Loss: N/A
+2026-05-10 20:37:07,570 - __main__ - INFO - Epoch 16, Train Loss: 25662.9663, Val Loss: N/A
+2026-05-10 20:37:07,955 - __main__ - INFO - Epoch 17, Train Loss: 25289.7110, Val Loss: N/A
+2026-05-10 20:37:08,308 - __main__ - INFO - Epoch 18, Train Loss: 25330.5901, Val Loss: N/A
+2026-05-10 20:37:08,641 - __main__ - INFO - Epoch 19, Train Loss: 26054.1487, Val Loss: N/A
+2026-05-10 20:37:08,972 - __main__ - INFO - Epoch 20, Train Loss: 25102.0809, Val Loss: N/A
+2026-05-10 20:37:09,325 - __main__ - INFO - Epoch 21, Train Loss: 25480.1396, Val Loss: N/A
+2026-05-10 20:37:09,685 - __main__ - INFO - Epoch 22, Train Loss: 25444.3650, Val Loss: N/A
+2026-05-10 20:37:10,026 - __main__ - INFO - Epoch 23, Train Loss: 25447.5967, Val Loss: N/A
+2026-05-10 20:37:10,372 - __main__ - INFO - Epoch 24, Train Loss: 25867.0474, Val Loss: N/A
+2026-05-10 20:37:10,702 - __main__ - INFO - Epoch 25, Train Loss: 25196.0906, Val Loss: N/A
+2026-05-10 20:37:11,049 - __main__ - INFO - Epoch 26, Train Loss: 25846.5656, Val Loss: N/A
+2026-05-10 20:37:11,419 - __main__ - INFO - Epoch 27, Train Loss: 25499.5527, Val Loss: N/A
+2026-05-10 20:37:11,767 - __main__ - INFO - Epoch 28, Train Loss: 25132.2822, Val Loss: N/A
+2026-05-10 20:37:12,106 - __main__ - INFO - Epoch 29, Train Loss: 25192.0329, Val Loss: N/A
+2026-05-10 20:37:12,447 - __main__ - INFO - Epoch 30, Train Loss: 25244.1019, Val Loss: N/A
+2026-05-10 20:37:12,759 - __main__ - INFO - Epoch 31, Train Loss: 25855.0037, Val Loss: N/A
+2026-05-10 20:37:13,101 - __main__ - INFO - Epoch 32, Train Loss: 25466.8092, Val Loss: N/A
+2026-05-10 20:37:13,437 - __main__ - INFO - Epoch 33, Train Loss: 25893.8459, Val Loss: N/A
+2026-05-10 20:37:13,773 - __main__ - INFO - Epoch 34, Train Loss: 25513.5839, Val Loss: N/A
+2026-05-10 20:37:14,077 - __main__ - INFO - Epoch 35, Train Loss: 25386.0684, Val Loss: N/A
+2026-05-10 20:37:14,381 - __main__ - INFO - Epoch 36, Train Loss: 26256.8843, Val Loss: N/A
+2026-05-10 20:37:14,723 - __main__ - INFO - Epoch 37, Train Loss: 25438.6007, Val Loss: N/A
+2026-05-10 20:37:15,061 - __main__ - INFO - Epoch 38, Train Loss: 25253.8818, Val Loss: N/A
+2026-05-10 20:37:15,408 - __main__ - INFO - Epoch 39, Train Loss: 25842.6206, Val Loss: N/A
+2026-05-10 20:37:15,719 - __main__ - INFO - Epoch 40, Train Loss: 25732.7342, Val Loss: N/A
+2026-05-10 20:37:16,026 - __main__ - INFO - Epoch 41, Train Loss: 25288.7665, Val Loss: N/A
+2026-05-10 20:37:16,324 - __main__ - INFO - Epoch 42, Train Loss: 25220.7864, Val Loss: N/A
+2026-05-10 20:37:16,666 - __main__ - INFO - Epoch 43, Train Loss: 25740.0425, Val Loss: N/A
+2026-05-10 20:37:16,994 - __main__ - INFO - Epoch 44, Train Loss: 25423.9573, Val Loss: N/A
+2026-05-10 20:37:17,319 - __main__ - INFO - Epoch 45, Train Loss: 26277.9803, Val Loss: N/A
+2026-05-10 20:37:17,632 - __main__ - INFO - Epoch 46, Train Loss: 25174.8582, Val Loss: N/A
+2026-05-10 20:37:17,938 - __main__ - INFO - Epoch 47, Train Loss: 25223.6913, Val Loss: N/A
+2026-05-10 20:37:18,245 - __main__ - INFO - Epoch 48, Train Loss: 25519.4358, Val Loss: N/A
+2026-05-10 20:37:18,617 - __main__ - INFO - Epoch 49, Train Loss: 25689.1505, Val Loss: N/A
+2026-05-10 20:37:18,944 - __main__ - INFO - Epoch 50, Train Loss: 25202.6512, Val Loss: N/A
+2026-05-10 20:37:19,304 - __main__ - INFO - Epoch 51, Train Loss: 25389.4729, Val Loss: N/A
+2026-05-10 20:37:19,612 - __main__ - INFO - Epoch 52, Train Loss: 25336.0296, Val Loss: N/A
+2026-05-10 20:37:19,921 - __main__ - INFO - Epoch 53, Train Loss: 26114.7363, Val Loss: N/A
+2026-05-10 20:37:20,239 - __main__ - INFO - Epoch 54, Train Loss: 25403.6002, Val Loss: N/A
+2026-05-10 20:37:20,570 - __main__ - INFO - Epoch 55, Train Loss: 25370.6365, Val Loss: N/A
+2026-05-10 20:37:20,893 - __main__ - INFO - Epoch 56, Train Loss: 26157.8475, Val Loss: N/A
+2026-05-10 20:37:21,200 - __main__ - INFO - Epoch 57, Train Loss: 25588.1389, Val Loss: N/A
+2026-05-10 20:37:21,503 - __main__ - INFO - Epoch 58, Train Loss: 25529.7869, Val Loss: N/A
+2026-05-10 20:37:21,815 - __main__ - INFO - Epoch 59, Train Loss: 25027.2446, Val Loss: N/A
+2026-05-10 20:37:22,171 - __main__ - INFO - Epoch 60, Train Loss: 25483.7321, Val Loss: N/A
+2026-05-10 20:37:22,515 - __main__ - INFO - Epoch 61, Train Loss: 25539.0367, Val Loss: N/A
+2026-05-10 20:37:22,822 - __main__ - INFO - Epoch 62, Train Loss: 25741.2118, Val Loss: N/A
+2026-05-10 20:37:23,175 - __main__ - INFO - Epoch 63, Train Loss: 25368.2755, Val Loss: N/A
+2026-05-10 20:37:23,497 - __main__ - INFO - Epoch 64, Train Loss: 25384.9918, Val Loss: N/A
+2026-05-10 20:37:23,856 - __main__ - INFO - Epoch 65, Train Loss: 25559.8017, Val Loss: N/A
+2026-05-10 20:37:24,220 - __main__ - INFO - Epoch 66, Train Loss: 25664.9256, Val Loss: N/A
+2026-05-10 20:37:24,533 - __main__ - INFO - Epoch 67, Train Loss: 25526.8223, Val Loss: N/A
+2026-05-10 20:37:24,838 - __main__ - INFO - Epoch 68, Train Loss: 25729.5006, Val Loss: N/A
+2026-05-10 20:37:25,150 - __main__ - INFO - Epoch 69, Train Loss: 25548.8647, Val Loss: N/A
+2026-05-10 20:37:25,453 - __main__ - INFO - Epoch 70, Train Loss: 25944.1609, Val Loss: N/A
+2026-05-10 20:37:25,812 - __main__ - INFO - Epoch 71, Train Loss: 26208.1948, Val Loss: N/A
+2026-05-10 20:37:26,174 - __main__ - INFO - Epoch 72, Train Loss: 25890.4738, Val Loss: N/A
+2026-05-10 20:37:26,484 - __main__ - INFO - Epoch 73, Train Loss: 25562.5969, Val Loss: N/A
+2026-05-10 20:37:26,811 - __main__ - INFO - Epoch 74, Train Loss: 25428.5077, Val Loss: N/A
+2026-05-10 20:37:27,192 - __main__ - INFO - Epoch 75, Train Loss: 25461.3503, Val Loss: N/A
+2026-05-10 20:37:27,561 - __main__ - INFO - Epoch 76, Train Loss: 25710.5742, Val Loss: N/A
+2026-05-10 20:37:27,880 - __main__ - INFO - Epoch 77, Train Loss: 25025.9993, Val Loss: N/A
+2026-05-10 20:37:28,222 - __main__ - INFO - Epoch 78, Train Loss: 25827.0347, Val Loss: N/A
+2026-05-10 20:37:28,535 - __main__ - INFO - Epoch 79, Train Loss: 25926.9108, Val Loss: N/A
+2026-05-10 20:37:28,832 - __main__ - INFO - Epoch 80, Train Loss: 25804.0957, Val Loss: N/A
+2026-05-10 20:37:29,159 - __main__ - INFO - Epoch 81, Train Loss: 25422.4540, Val Loss: N/A
+2026-05-10 20:37:29,523 - __main__ - INFO - Epoch 82, Train Loss: 25156.6082, Val Loss: N/A
+2026-05-10 20:37:29,884 - __main__ - INFO - Epoch 83, Train Loss: 25329.3604, Val Loss: N/A
+2026-05-10 20:37:30,202 - __main__ - INFO - Epoch 84, Train Loss: 25092.4300, Val Loss: N/A
+2026-05-10 20:37:30,518 - __main__ - INFO - Epoch 85, Train Loss: 25278.8376, Val Loss: N/A
+2026-05-10 20:37:30,825 - __main__ - INFO - Epoch 86, Train Loss: 25040.8217, Val Loss: N/A
+2026-05-10 20:37:31,205 - __main__ - INFO - Epoch 87, Train Loss: 25794.0563, Val Loss: N/A
+2026-05-10 20:37:31,558 - __main__ - INFO - Epoch 88, Train Loss: 25540.9772, Val Loss: N/A
+2026-05-10 20:37:31,876 - __main__ - INFO - Epoch 89, Train Loss: 25213.4152, Val Loss: N/A
+2026-05-10 20:37:32,191 - __main__ - INFO - Epoch 90, Train Loss: 25531.7595, Val Loss: N/A
+2026-05-10 20:37:32,523 - __main__ - INFO - Epoch 91, Train Loss: 25190.0832, Val Loss: N/A
+2026-05-10 20:37:32,860 - __main__ - INFO - Epoch 92, Train Loss: 25306.7354, Val Loss: N/A
+2026-05-10 20:37:33,236 - __main__ - INFO - Epoch 93, Train Loss: 25276.3283, Val Loss: N/A
+2026-05-10 20:37:33,609 - __main__ - INFO - Epoch 94, Train Loss: 25588.4614, Val Loss: N/A
+2026-05-10 20:37:33,921 - __main__ - INFO - Epoch 95, Train Loss: 25556.7611, Val Loss: N/A
+2026-05-10 20:37:34,289 - __main__ - INFO - Epoch 96, Train Loss: 25621.6992, Val Loss: N/A
+2026-05-10 20:37:34,619 - __main__ - INFO - Epoch 97, Train Loss: 25025.7293, Val Loss: N/A
+2026-05-10 20:37:34,968 - __main__ - INFO - Epoch 98, Train Loss: 25295.6656, Val Loss: N/A
+2026-05-10 20:37:35,303 - __main__ - INFO - Epoch 99, Train Loss: 25897.4611, Val Loss: N/A
+2026-05-10 20:37:35,620 - __main__ - INFO - Epoch 100, Train Loss: 25678.5259, Val Loss: N/A
+2026-05-10 20:50:35,894 - __main__ - WARNING - Failed to log PyFunc model: API request to endpoint /api/2.0/mlflow/logged-models failed with error code 404 != 200. Response body: '<!doctype html>
+<html lang=en>
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+'. Falling back to PyTorch model logging.
+2026-05-10 20:54:27,310 - __main__ - INFO - Epoch 1, Train Loss: 25595.0886, Val Loss: 58811.2047
+2026-05-10 20:54:27,838 - __main__ - INFO - Epoch 2, Train Loss: 25793.1969, Val Loss: 58811.4625
+2026-05-10 20:54:28,443 - __main__ - INFO - Epoch 3, Train Loss: 25894.1546, Val Loss: 58811.5586
+2026-05-10 20:54:28,984 - __main__ - INFO - Epoch 4, Train Loss: 25728.0704, Val Loss: 58811.5367
+2026-05-10 20:54:29,533 - __main__ - INFO - Epoch 5, Train Loss: 25043.2402, Val Loss: 58811.5594
+2026-05-10 20:54:30,088 - __main__ - INFO - Epoch 6, Train Loss: 25461.6259, Val Loss: 58811.4367
+2026-05-10 20:54:30,646 - __main__ - INFO - Epoch 7, Train Loss: 25845.2759, Val Loss: 58811.4211
+2026-05-10 20:54:31,184 - __main__ - INFO - Epoch 8, Train Loss: 25585.5218, Val Loss: 58811.4930
+2026-05-10 20:54:31,731 - __main__ - INFO - Epoch 9, Train Loss: 25792.7918, Val Loss: 58811.4898
+2026-05-10 20:54:32,299 - __main__ - INFO - Epoch 10, Train Loss: 25865.3033, Val Loss: 58811.4586
+2026-05-10 20:54:32,833 - __main__ - INFO - Epoch 11, Train Loss: 25917.1641, Val Loss: 58811.4594
+2026-05-10 20:54:32,833 - __main__ - INFO - Early stopping triggered
+2026-05-10 20:54:33,511 - __main__ - WARNING - Failed to log PyFunc model: API request to endpoint /api/2.0/mlflow/logged-models failed with error code 404 != 200. Response body: '<!doctype html>
+<html lang=en>
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+'. Falling back to PyTorch model logging.
+2026-05-10 21:06:56,470 - __main__ - INFO - Epoch 1, Train Loss: 25905.6201, Val Loss: 58816.4602
+2026-05-10 21:06:57,140 - __main__ - INFO - Epoch 2, Train Loss: 26063.4615, Val Loss: 58816.4156
+2026-05-10 21:06:57,647 - __main__ - INFO - Epoch 3, Train Loss: 25593.8951, Val Loss: 58816.4250
+2026-05-10 21:06:58,197 - __main__ - INFO - Epoch 4, Train Loss: 26172.9653, Val Loss: 58816.3055
+2026-05-10 21:06:58,703 - __main__ - INFO - Epoch 5, Train Loss: 25956.8746, Val Loss: 58816.2688
+2026-05-10 21:06:59,203 - __main__ - INFO - Epoch 6, Train Loss: 25586.8730, Val Loss: 58816.3453
+2026-05-10 21:06:59,734 - __main__ - INFO - Epoch 7, Train Loss: 25791.0229, Val Loss: 58816.3227
+2026-05-10 21:07:00,306 - __main__ - INFO - Epoch 8, Train Loss: 25735.5942, Val Loss: 58816.3031
+2026-05-10 21:07:00,805 - __main__ - INFO - Epoch 9, Train Loss: 25504.3781, Val Loss: 58816.3063
+2026-05-10 21:07:01,306 - __main__ - INFO - Epoch 10, Train Loss: 25992.2982, Val Loss: 58816.3516
+2026-05-10 21:07:01,879 - __main__ - INFO - Epoch 11, Train Loss: 26068.1629, Val Loss: 58816.3039
+2026-05-10 21:07:02,378 - __main__ - INFO - Epoch 12, Train Loss: 25270.5723, Val Loss: 58816.3695
+2026-05-10 21:07:02,910 - __main__ - INFO - Epoch 13, Train Loss: 25698.9999, Val Loss: 58816.3578
+2026-05-10 21:07:03,421 - __main__ - INFO - Epoch 14, Train Loss: 25762.0533, Val Loss: 58816.2742
+2026-05-10 21:07:03,997 - __main__ - INFO - Epoch 15, Train Loss: 25919.6152, Val Loss: 58816.3383
+2026-05-10 21:07:03,998 - __main__ - INFO - Early stopping triggered
+2026-05-10 21:07:04,604 - __main__ - WARNING - Failed to log PyFunc model: API request to endpoint /api/2.0/mlflow/logged-models failed with error code 404 != 200. Response body: '<!doctype html>
+<html lang=en>
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+'. Falling back to PyTorch model logging.
+2026-05-10 21:11:53,153 - __main__ - INFO - Epoch 1, Train Loss: 26111.4031, Val Loss: 58812.8477
+2026-05-10 21:11:53,756 - __main__ - INFO - Epoch 2, Train Loss: 25711.2965, Val Loss: 58812.7141
+2026-05-10 21:11:54,288 - __main__ - INFO - Epoch 3, Train Loss: 25428.7784, Val Loss: 58812.7297
+2026-05-10 21:11:54,857 - __main__ - INFO - Epoch 4, Train Loss: 25265.5787, Val Loss: 58812.6516
+2026-05-10 21:11:55,341 - __main__ - INFO - Epoch 5, Train Loss: 25437.6565, Val Loss: 58812.7336
+2026-05-10 21:11:55,855 - __main__ - INFO - Epoch 6, Train Loss: 25602.4784, Val Loss: 58812.7555
+2026-05-10 21:11:56,438 - __main__ - INFO - Epoch 7, Train Loss: 25779.1765, Val Loss: 58812.7070
+2026-05-10 21:11:56,950 - __main__ - INFO - Epoch 8, Train Loss: 25375.2799, Val Loss: 58812.8125
+2026-05-10 21:11:57,457 - __main__ - INFO - Epoch 9, Train Loss: 25431.0419, Val Loss: 58812.8344
+2026-05-10 21:11:58,038 - __main__ - INFO - Epoch 10, Train Loss: 25794.5973, Val Loss: 58812.7117
+2026-05-10 21:11:58,566 - __main__ - INFO - Epoch 11, Train Loss: 26068.9570, Val Loss: 58812.8281
+2026-05-10 21:11:59,054 - __main__ - INFO - Epoch 12, Train Loss: 25447.9612, Val Loss: 58812.7344
+2026-05-10 21:11:59,547 - __main__ - INFO - Epoch 13, Train Loss: 25929.2350, Val Loss: 58812.7914
+2026-05-10 21:12:00,148 - __main__ - INFO - Epoch 14, Train Loss: 25763.0467, Val Loss: 58812.8867
+2026-05-10 21:12:00,148 - __main__ - INFO - Early stopping triggered
+2026-05-10 21:16:44,174 - __main__ - INFO - Epoch 1, Train Loss: 25386.9692, Val Loss: 58761.9563
+2026-05-10 21:16:44,801 - __main__ - INFO - Epoch 2, Train Loss: 25419.7882, Val Loss: 58762.5281
+2026-05-10 21:16:45,328 - __main__ - INFO - Epoch 3, Train Loss: 25467.8744, Val Loss: 58762.5891
+2026-05-10 21:16:45,841 - __main__ - INFO - Epoch 4, Train Loss: 25318.4503, Val Loss: 58762.4016
+2026-05-10 21:16:46,397 - __main__ - INFO - Epoch 5, Train Loss: 26031.1875, Val Loss: 58762.5719
+2026-05-10 21:16:46,919 - __main__ - INFO - Epoch 6, Train Loss: 25546.3772, Val Loss: 58762.4477
+2026-05-10 21:16:47,456 - __main__ - INFO - Epoch 7, Train Loss: 25326.6143, Val Loss: 58762.3945
+2026-05-10 21:16:47,970 - __main__ - INFO - Epoch 8, Train Loss: 25609.8240, Val Loss: 58762.3953
+2026-05-10 21:16:48,521 - __main__ - INFO - Epoch 9, Train Loss: 25181.5917, Val Loss: 58762.6289
+2026-05-10 21:16:49,161 - __main__ - INFO - Epoch 10, Train Loss: 25181.9859, Val Loss: 58762.5102
+2026-05-10 21:16:49,742 - __main__ - INFO - Epoch 11, Train Loss: 25541.9087, Val Loss: 58762.5852
+2026-05-10 21:16:49,742 - __main__ - INFO - Early stopping triggered
+2026-05-10 21:20:28,335 - __main__ - INFO - Epoch 1, Train Loss: 25625.7143, Val Loss: 58797.3617
+2026-05-10 21:20:28,855 - __main__ - INFO - Epoch 2, Train Loss: 25634.9562, Val Loss: 58797.3484
+2026-05-10 21:20:29,417 - __main__ - INFO - Epoch 3, Train Loss: 25428.7006, Val Loss: 58797.3195
+2026-05-10 21:20:29,948 - __main__ - INFO - Epoch 4, Train Loss: 25476.6609, Val Loss: 58797.3562
+2026-05-10 21:20:30,447 - __main__ - INFO - Epoch 5, Train Loss: 26071.4155, Val Loss: 58797.3969
+2026-05-10 21:20:30,979 - __main__ - INFO - Epoch 6, Train Loss: 26272.4546, Val Loss: 58797.3703
+2026-05-10 21:20:31,520 - __main__ - INFO - Epoch 7, Train Loss: 25720.9765, Val Loss: 58797.3602
+2026-05-10 21:20:32,022 - __main__ - INFO - Epoch 8, Train Loss: 25223.9417, Val Loss: 58797.3438
+2026-05-10 21:20:32,517 - __main__ - INFO - Epoch 9, Train Loss: 25446.8569, Val Loss: 58797.3547
+2026-05-10 21:20:33,050 - __main__ - INFO - Epoch 10, Train Loss: 25565.7533, Val Loss: 58797.3453
+2026-05-10 21:20:33,588 - __main__ - INFO - Epoch 11, Train Loss: 25657.6162, Val Loss: 58797.4461
+2026-05-10 21:20:34,140 - __main__ - INFO - Epoch 12, Train Loss: 25797.1628, Val Loss: 58797.3734
+2026-05-10 21:20:34,679 - __main__ - INFO - Epoch 13, Train Loss: 25492.4579, Val Loss: 58797.3023
+2026-05-10 21:20:35,213 - __main__ - INFO - Epoch 14, Train Loss: 25844.3695, Val Loss: 58797.4141
+2026-05-10 21:20:35,728 - __main__ - INFO - Epoch 15, Train Loss: 25837.2468, Val Loss: 58797.4055
+2026-05-10 21:20:36,258 - __main__ - INFO - Epoch 16, Train Loss: 25694.4077, Val Loss: 58797.3508
+2026-05-10 21:20:36,834 - __main__ - INFO - Epoch 17, Train Loss: 25584.9962, Val Loss: 58797.3539
+2026-05-10 21:20:37,369 - __main__ - INFO - Epoch 18, Train Loss: 25589.6948, Val Loss: 58797.3500
+2026-05-10 21:20:37,856 - __main__ - INFO - Epoch 19, Train Loss: 25439.2026, Val Loss: 58797.3477
+2026-05-10 21:20:38,413 - __main__ - INFO - Epoch 20, Train Loss: 26190.9816, Val Loss: 58797.3383
+2026-05-10 21:20:38,929 - __main__ - INFO - Epoch 21, Train Loss: 25630.8889, Val Loss: 58797.4148
+2026-05-10 21:20:39,421 - __main__ - INFO - Epoch 22, Train Loss: 25961.1527, Val Loss: 58797.3664
+2026-05-10 21:20:39,932 - __main__ - INFO - Epoch 23, Train Loss: 25697.6598, Val Loss: 58797.3922
+2026-05-10 21:20:39,932 - __main__ - INFO - Early stopping triggered
+2026-05-10 21:22:00,375 - __main__ - INFO - Epoch 1, Train Loss: 25627.6887, Val Loss: 58809.1867
+2026-05-10 21:22:03,884 - __main__ - WARNING - Failed to log PyFunc model: 'WindowsPath' object has no attribute 'startswith'. Falling back to PyTorch model logging.

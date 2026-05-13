@@ -15,6 +15,9 @@ RAW_DATA_FILE = RAW_DATA_DIR / "aapl.parquet"
 logger = get_logger(__name__)
 
 def format_dataframe(df: pd.DataFrame) -> pd.DataFrame:
+    if isinstance(df.columns, pd.MultiIndex):
+        df.columns = df.columns.get_level_values(0)
+
     df = df.reset_index()
 
     df = df.rename(columns={
@@ -39,9 +42,9 @@ def format_dataframe(df: pd.DataFrame) -> pd.DataFrame:
     
     return df
 
-def fetch_data(start_date: str) -> pd.DataFrame:
+def fetch_data(start_date: str = START_DATE) -> pd.DataFrame:
     for i in range(5):
-        df = yf.download("AAPL", start="2020-01-01", progress=False)
+        df = yf.download("AAPL", start=start_date, progress=False)
         if not df.empty:
             logger.info(f"Fetched {len(df)} rows from Yahoo Finance")
             df = format_dataframe(df)
