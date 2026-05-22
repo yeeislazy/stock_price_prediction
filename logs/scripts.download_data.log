@@ -41,3 +41,9 @@
 2026-05-08 17:00:18,228 - scripts.download_data - WARNING - No existing data. Running full download.
 2026-05-08 17:00:18,976 - scripts.download_data - INFO - Fetched 1595 rows from Yahoo Finance
 2026-05-08 17:00:18,998 - scripts.download_data - INFO - Saved 1595 rows to C:\Users\yeech\Documents\Project\apple_stock_price_prediction\data\raw\aapl.parquet
+2026-05-18 16:18:57,817 - scripts.download_data - WARNING - No existing data. Running full download.
+2026-05-18 16:18:58,460 - scripts.download_data - INFO - Fetched 1601 rows from Yahoo Finance
+2026-05-18 16:18:58,484 - scripts.download_data - INFO - Saved 1601 rows to C:\Users\yeech\Documents\Project\apple_stock_price_prediction\data\aapl\raw\aapl.parquet
+2026-05-18 16:19:35,393 - scripts.download_data - WARNING - No existing data. Running full download.
+2026-05-18 16:19:36,377 - scripts.download_data - INFO - Fetched 1601 rows from Yahoo Finance
+2026-05-18 16:19:36,405 - scripts.download_data - INFO - Saved 1601 rows to C:\Users\yeech\Documents\Project\apple_stock_price_prediction\data\qqq\raw\qqq.parquet

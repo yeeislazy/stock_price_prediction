@@ -5,12 +5,12 @@ from pathlib import Path
 from scripts.logger import get_logger
 import time
 
-STOCK = "AAPL"
+STOCK = "QQQ"
 START_DATE = "2020-01-01"
 
-RAW_DATA_DIR = Path(__file__).parent.parent.parent / "data" / "raw"
+RAW_DATA_DIR = Path(__file__).parent.parent.parent / "data" / STOCK.lower() / "raw"
 RAW_DATA_DIR.mkdir(parents=True, exist_ok=True)
-RAW_DATA_FILE = RAW_DATA_DIR / "aapl.parquet"
+RAW_DATA_FILE = RAW_DATA_DIR / f"{STOCK.lower()}.parquet"
 
 logger = get_logger(__name__)
 
@@ -44,7 +44,7 @@ def format_dataframe(df: pd.DataFrame) -> pd.DataFrame:
 
 def fetch_data(start_date: str = START_DATE) -> pd.DataFrame:
     for i in range(5):
-        df = yf.download("AAPL", start=start_date, progress=False)
+        df = yf.download(STOCK, start=start_date, progress=False)
         if not df.empty:
             logger.info(f"Fetched {len(df)} rows from Yahoo Finance")
             df = format_dataframe(df)

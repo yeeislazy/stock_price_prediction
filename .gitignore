@@ -11,3 +11,17 @@ wheels/
 
 # data files
 data/
+
+# mlflow run
+mlruns/
+mlartifacts/
+
+
+# logs
+logs/
+
+# env files
+.env
+
+# artifacts
+artifacts/

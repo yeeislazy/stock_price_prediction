@@ -1,9 +1,12 @@
 import pandas as pd
 from pathlib import Path
+from scripts.download_data import STOCK
 
-RAW_DATA_DIR = Path(__file__).parent.parent.parent / "data" / "raw"
-PROCESSED_DATA_DIR = Path(__file__).parent.parent.parent / "data" / "processed"
-TRAINING_DATA_DIR = Path(__file__).parent.parent.parent / "data" / "training"
+
+
+RAW_DATA_DIR = Path(__file__).parent.parent.parent / "data" / STOCK.lower() / "raw"
+PROCESSED_DATA_DIR = Path(__file__).parent.parent.parent / "data" / STOCK.lower() / "processed"
+TRAINING_DATA_DIR = Path(__file__).parent.parent.parent / "data" / STOCK.lower() / "training"
 RAW_DATA_DIR.mkdir(parents=True, exist_ok=True)
 PROCESSED_DATA_DIR.mkdir(parents=True, exist_ok=True)
 TRAINING_DATA_DIR.mkdir(parents=True, exist_ok=True)
@@ -46,9 +49,9 @@ def compute_pipeline(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 def compute_return_ratio(df: pd.DataFrame) -> pd.DataFrame:
-    df['return_2'] = df['close'].shift(2) - df['close'] / df['close']
-    df['return_5'] = df['close'].shift(5) - df['close'] / df['close']
-    df['return_14'] = df['close'].shift(14) - df['close'] / df['close']
+    df['return_2'] = (df['close'].shift(2) - df['close']) / df['close']
+    df['return_5'] = (df['close'].shift(5) - df['close']) / df['close']
+    df['return_14'] = (df['close'].shift(14) - df['close']) / df['close']
     df = df.dropna()
     return df
 
@@ -60,14 +63,14 @@ def split_data(df: pd.DataFrame, test_size=0.2):
     return train_df, test_df
 
 def main():
-    df = pd.read_parquet(RAW_DATA_DIR / 'aapl.parquet')
+    df = pd.read_parquet(RAW_DATA_DIR / f"{STOCK.lower()}.parquet")
     df = compute_pipeline(df)
     df = compute_return_ratio(df)
-    df.to_parquet(PROCESSED_DATA_DIR / 'aapl.parquet', index=False)
+    df.to_parquet(PROCESSED_DATA_DIR / f"{STOCK.lower()}.parquet", index=False)
 
     train_df, test_df = split_data(df)
-    train_df.to_parquet(TRAINING_DATA_DIR / 'aapl_train.parquet', index=False)
-    test_df.to_parquet(TRAINING_DATA_DIR / 'aapl_test.parquet', index=False)
+    train_df.to_parquet(TRAINING_DATA_DIR / f"{STOCK.lower()}_train.parquet", index=False)
+    test_df.to_parquet(TRAINING_DATA_DIR / f"{STOCK.lower()}_test.parquet", index=False)
 
 if __name__ == "__main__":
     main()
