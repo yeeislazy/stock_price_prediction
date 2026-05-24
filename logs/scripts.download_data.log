@@ -47,3 +47,7 @@
 2026-05-18 16:19:35,393 - scripts.download_data - WARNING - No existing data. Running full download.
 2026-05-18 16:19:36,377 - scripts.download_data - INFO - Fetched 1601 rows from Yahoo Finance
 2026-05-18 16:19:36,405 - scripts.download_data - INFO - Saved 1601 rows to C:\Users\yeech\Documents\Project\apple_stock_price_prediction\data\qqq\raw\qqq.parquet
+2026-05-22 22:46:25,548 - scripts.download_data - INFO - Fetched 5 rows from Yahoo Finance
+2026-05-22 22:46:25,576 - scripts.download_data - INFO - Saved 1605 rows to C:\Users\yeech\Documents\Project\apple_stock_price_prediction\data\qqq\raw\qqq.parquet
+2026-05-22 22:46:25,576 - scripts.download_data - INFO - Updated: 2026-05-18 → 2026-05-21
+2026-05-22 22:46:25,576 - scripts.download_data - INFO - Total rows after update: 1605

@@ -10,7 +10,7 @@ wheels/
 .venv
 
 # data files
-data/
+/data/
 
 # mlflow run
 mlruns/

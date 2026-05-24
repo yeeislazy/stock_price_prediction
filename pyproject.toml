@@ -35,13 +35,16 @@ url = "https://download.pytorch.org/whl/cu128"
 explicit = true
 
 [project.scripts]
-download-update-data = "scripts.download_data:download_update_data"
-process-data = "scripts.process_data:main"
-train-model = "scripts.build_model:main"
+download-update-data = "data.ingestion.download_data:main"
+process-data = "data.processing.process_data:main"
+train-candidates = "training.train_candidate:main"
+train-production = "training.train_production:main"
+retrain-pipeline = "training.retrain_pipeline:main"
+production-monitor = "monitoring.production_monitor:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
-include = ["app*", "training*", "scripts*"]
+include = ["app*", "training*", "data*", "monitoring*", "models*", "utils*", "configuration*"]
 
 [dependency-groups]
 dev = [
