@@ -8,6 +8,7 @@ START_DATE = "2020-01-01"
 DEFAULT_TRAIN_YEARS = 2
 DEFAULT_TEST_SIZE = 14  # days
 
+
 # mlflow uri
 MLFLOW_TRACKING_URI = "https://dagshub.com/yeeislazy/stock_price_prediction.mlflow"
 
