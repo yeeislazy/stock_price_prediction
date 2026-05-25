@@ -25,3 +25,6 @@ logs/
 
 # artifacts
 artifacts/
+
+# run scripts
+run_training.sh

@@ -22,7 +22,7 @@ from models.others import StockPriceDataset, EarlyStopping, train_scaler, get_sc
 from utils.logger import get_logger
 from utils.split_train_test import split_train_test
 from utils.test_model import test_model
-from configuration.config import STOCK, CANDIDATE_PARAMS, PROCESSED_DATA_FILE, MLFLOW_TRACKING_URI
+from configuration.config import STOCK, CANDIDATE_PARAMS, PROCESSED_DATA_FILE, MLFLOW_TRACKING_URI, DEFAULT_TRAIN_YEARS
 
 
 
@@ -234,9 +234,11 @@ def main():
     
     df = pd.read_parquet(PROCESSED_DATA_FILE)
     
-    train_df, test_df = split_train_test(df, test_mode='ratio', test_size=0.2)
+    start_date = pd.to_datetime(df['date'].max()) - pd.DateOffset(years=DEFAULT_TRAIN_YEARS)
+    df = df[df['date'] >= start_date].reset_index(drop=True)
     
-    start_date = train_df['date'].min().strftime("%Y%m%d")
+    train_df, test_df = split_train_test(df, test_mode='period', test_size=14)
+    
     end_date = train_df['date'].max().strftime("%Y%m%d")
 
     try_parameters = CANDIDATE_PARAMS
