@@ -10,7 +10,7 @@ from training.train_candidate import train_lstm
 from models.request_model import request_model
 import argparse
 
-from configuration.config import PROCESSED_DATA_FILE, DEFAULT_TRAIN_YEARS ,DEFAULT_TEST_SIZE
+from configuration.config import PROCESSED_DATA_FILE, DEFAULT_TRAIN_YEARS ,DEFAULT_TEST_SIZE, MLFLOW_TRACKING_URI
 from utils.split_train_test import split_train_test
 from utils.logger import get_logger
 
@@ -19,8 +19,7 @@ def main():
     
     logger = get_logger(__name__)
     
-    tracking_uri = os.getenv("MLFLOW_TRACKING_URI")
-    mlflow.set_tracking_uri(tracking_uri)
+    mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
     model_name = 'stock-price-prediction-model'  
     
     # argparse for command line arguments

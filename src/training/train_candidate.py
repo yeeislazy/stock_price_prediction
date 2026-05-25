@@ -22,7 +22,7 @@ from models.others import StockPriceDataset, EarlyStopping, train_scaler, get_sc
 from utils.logger import get_logger
 from utils.split_train_test import split_train_test
 from utils.test_model import test_model
-from configuration.config import STOCK, CANDIDATE_PARAMS, PROCESSED_DATA_FILE
+from configuration.config import STOCK, CANDIDATE_PARAMS, PROCESSED_DATA_FILE, MLFLOW_TRACKING_URI
 
 
 
@@ -230,8 +230,7 @@ def train_lstm(parameters,train_df,test_df,feature_columns,target_columns,featur
 def main():
     load_dotenv()
     
-    tracking_uri = os.getenv("MLFLOW_TRACKING_URI")
-    mlflow.set_tracking_uri(tracking_uri)
+    mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
     
     df = pd.read_parquet(PROCESSED_DATA_FILE)
     
