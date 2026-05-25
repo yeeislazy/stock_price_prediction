@@ -68,6 +68,7 @@ def train_lstm(parameters,train_df,test_df,feature_columns,target_columns,featur
         model.to(device)
         
         optimizer = torch.optim.Adam(model.parameters(), lr=parameters["lr"])
+        criterion = nn.MSELoss(reduction='none')
         
         early_stopping = EarlyStopping(patience=parameters["num_epochs"] // 10, min_delta=0.001)
         
@@ -101,7 +102,7 @@ def train_lstm(parameters,train_df,test_df,feature_columns,target_columns,featur
                 outputs = model(X_batch)
                 
                 
-                loss_per_target = (outputs - Y_batch) ** 2
+                loss_per_target = criterion(outputs, Y_batch)
                 weighted_loss = loss_per_target * weights
                 loss = weighted_loss.sum(dim=1).mean()
                 
