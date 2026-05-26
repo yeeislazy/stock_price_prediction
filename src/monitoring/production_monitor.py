@@ -9,9 +9,10 @@ from pathlib import Path
 import pandas as pd
 from datetime import datetime
 from statistics import mean
+import numpy as np
 
-from utils import logger
-from data.ingestion.download_data import STOCK
+from configuration.config import MLFLOW_TRACKING_URI, PROCESSED_DATA_FILE, STOCK
+from utils.logger import get_logger
 from models.others import StockPriceDataset
 from training.retrain_pipeline import request_model
 
@@ -19,7 +20,19 @@ def evaluate_model(model, metrics, agg_metrics, seq, target,feature_columns, tar
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
     with torch.no_grad():
-        pred = model.predict(pd.DataFrame(seq.cpu().numpy(), columns=feature_columns))[0] # shape: (output_size), type: list
+        input_df = pd.DataFrame(
+            seq.cpu().numpy(),
+            columns=feature_columns
+        )
+
+        input_df["volume"] = input_df["volume"].astype("int64")
+
+        input_df["year"] = input_df["year"].astype("int32")
+        input_df["month"] = input_df["month"].astype("int32")
+        input_df["day"] = input_df["day"].astype("int32")
+
+        pred = model.predict(input_df)[0]
+        
         actual = target.tolist()
 
     for i, col in enumerate(target_columns):
@@ -32,17 +45,18 @@ def evaluate_model(model, metrics, agg_metrics, seq, target,feature_columns, tar
             agg_metrics[f"mae_{col}"].append(abs(pred[i] - actual[i]))
             agg_metrics[f"direction_accuracy_{col}"].append(float(pred[i] * actual[i] > 0))
 
-    return metrics
+    return metrics, agg_metrics
 
 def main():
     load_dotenv()
+    logger = get_logger(__name__)
     
-    tracking_uri = os.getenv("MLFLOW_TRACKING_URI")
+    tracking_uri = MLFLOW_TRACKING_URI
     mlflow.set_tracking_uri(tracking_uri)
     
     model_name = 'stock-price-prediction-model'
     
-    model, model_version, model_params = request_model(model_name=model_name,tags = 'Production')
+    model, model_version, model_params, _ = request_model(model_name=model_name,alias = 'Production')
         
     # get model info
     end_date = pd.to_datetime(model_params["end_date"])
@@ -61,7 +75,7 @@ def main():
     }
         
     # load dataset
-    dataset_path = Path(__file__).parent.parent.parent / "data" / STOCK.lower() / "training" / f"{STOCK.lower()}_test.parquet"
+    dataset_path = PROCESSED_DATA_FILE
     test_df = pd.read_parquet(dataset_path)
     logger.info(f"Loaded test dataset with {len(test_df)} rows from {dataset_path}")
     
@@ -94,14 +108,16 @@ def main():
             date = datetime(year=int(year), month=int(month), day=int(day)) if year and month and day else None
             
             # evaluate the model
-            metrics = evaluate_model(model, metrics, agg_metrics, seq, target, feature_columns, target_columns)
+            metrics, agg_metrics = evaluate_model(model, metrics, agg_metrics, seq, target, feature_columns, target_columns)
             
             # log the metrics to MLflow
             mlflow.log_metrics(metrics, step= int(date.timestamp()) if date else i)
             
         # log aggregate metrics
         for col in target_columns:
-            agg_metrics[f"mae_{col}"] = mean(agg_metrics[f"mae_{col}"])
-            agg_metrics[f"direction_accuracy_{col}"] = mean(agg_metrics[f"direction_accuracy_{col}"])
+            agg_metrics[f"mae_{col}"] = np.nanmean(agg_metrics[f"mae_{col}"])
+            agg_metrics[f"direction_accuracy_{col}"] = np.nanmean(agg_metrics[f"direction_accuracy_{col}"])
         
         mlflow.log_metrics(agg_metrics)
+        
+        logger.info(f"Logged evaluation metrics to MLflow: {agg_metrics}")

@@ -1,0 +1,15 @@
+services:
+  airflow:
+    build: .
+
+    ports:
+      - "8080:8080"
+
+    environment:
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+
+    volumes:
+      - ./src/orchestration/airflow/dags:/opt/airflow/dags
+      - ./data:/opt/airflow/project/data
+      - ./artifacts:/opt/airflow/project/artifacts
+      - ./mlruns:/opt/airflow/project/mlruns

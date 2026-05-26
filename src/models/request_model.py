@@ -58,7 +58,8 @@ def request_model( model_name='stock-price-prediction-model', alias='Production'
     
     if model is None:
         try:
-            latest_version = client.get_latest_versions(model_name, stages=["None"])[0].version
+            model_version = client.get_latest_versions(model_name, stages=["Production"])[0]
+            latest_version = model_version.version
             model_uri = f"models:/{model_name}/{latest_version}"
             model = pyfunc.load_model(model_uri)
             logger.info(f"Successfully loaded latest model from {model_uri}/{latest_version}")
@@ -67,6 +68,7 @@ def request_model( model_name='stock-price-prediction-model', alias='Production'
             return
         
     # get metrics from MLflow
+    run_id = model_version.run_id
     run = client.get_run(run_id)
     metrics = run.data.metrics
     

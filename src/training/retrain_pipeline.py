@@ -4,10 +4,12 @@ import os
 import mlflow
 import pandas as pd
 from dotenv import load_dotenv
+import torch
+from torch.utils.data import DataLoader
 
 from data.ingestion.download_data import STOCK
 from utils.logger import get_logger
-from models.others import train_scaler
+from models.others import StockPriceDataset, train_scaler
 from training.train_candidate import train_lstm
 from models.request_model import request_model
 import argparse
@@ -76,7 +78,29 @@ def main():
     )
     
     # test old model on the new data test set
-    old_metrics = test_model(old_model, test_df, device='cpu', parameters=model_params, targets_scaler=targets_scaler)
+    test_dataset = StockPriceDataset(
+        df = test_df, 
+        feature_columns=feature_columns, 
+        target_columns=target_columns, 
+        features_scaler=features_scaler,
+        targets_scaler=targets_scaler,
+        seq_len=model_params["seq_len"]
+    )
+    test_dataloader = DataLoader(test_dataset, batch_size=1, shuffle=False)
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    
+    old_metrics = test_model(
+        model = old_model._model_impl.python_model.model, 
+        test_dataloader=test_dataloader, 
+        device=device, 
+        parameters=model_params, 
+        targets_scaler=targets_scaler
+    )
+    old_final_metrics = {}
+    for k, v in old_metrics.items():
+        old_final_metrics[f'final_{k}'] = v
+    old_metrics = old_final_metrics
+        
     evaluate_target = target_columns[0]
     
     # log the old model's metrics to MLflow for comparison
@@ -92,22 +116,22 @@ def main():
         
         client = mlflow.MlflowClient()
         client.set_model_version_tag(
-            model_name, 
-            int(old_model_version), 
-            "last_evaluated_run", 
-            eval_run.info.run_id
+            name=model_name, 
+            version=str(old_model_version), 
+            key="last_evaluated_run", 
+            value=str(eval_run.info.run_id)
         )
     
     # compare the new model's performance with the old model and register the new model if it outperforms the old model
-    if best_metrics.get(f'final_{evaluate_target}_test_loss', float('inf')) < old_metrics.get(f'{evaluate_target}_test_loss', float('inf')):
+    if best_metrics.get(f'final_{evaluate_target}_test_loss', float('inf')) > old_metrics.get(f'final_{evaluate_target}_test_loss', float('inf')):
         logger.info(f"New model outperforms the old model on {evaluate_target} test loss. Consider promoting the new model to production.")
         
         # register the new model in MLflow Model Registry with the same name and a new alias "Champion"
         register_info = mlflow.register_model(model_info.model_uri, name=model_name)
         version = register_info.version
         client = mlflow.tracking.MlflowClient()
-        client.set_registered_model_alias(model_name, "Champion", version)
-        logger.info(f"Registered model version {version} of {model_name} with alias 'Champion'")
+        client.set_registered_model_alias(model_name, "champion", version)
+        logger.info(f"Registered model version {version} of {model_name} with alias 'champion'")
 
 if __name__ == "__main__":
     main()

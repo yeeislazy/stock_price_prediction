@@ -26,7 +26,7 @@ from configuration.config import STOCK, CANDIDATE_PARAMS, PROCESSED_DATA_FILE, M
 
 
 
-def train_lstm(parameters,train_df,test_df,feature_columns,target_columns,features_scaler=None,targets_scaler=None, run_name=None, experiment_name='qqq_stock_price_prediction',model_name=None,alias=None):
+def train_lstm(parameters,train_df,feature_columns,target_columns,test_df = None,features_scaler=None,targets_scaler=None, run_name=None, experiment_name='qqq_stock_price_prediction',model_name=None,alias=None):
     logger = get_logger(__name__)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     

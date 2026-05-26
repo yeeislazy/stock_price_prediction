@@ -70,7 +70,7 @@ def main():
     # register model as "Production"
     registered_model = mlflow.register_model(model_uri=model_info.model_uri, name=model_name)
     mlflow_client = mlflow.tracking.MlflowClient()
-    mlflow_client.set_registered_model_alias(name=model_name, alias=alias, version=registered_model.version)
+    mlflow_client.set_registered_model_alias(name=model_name, alias='production', version=registered_model.version)
     
 if __name__ == "__main__":
     main()

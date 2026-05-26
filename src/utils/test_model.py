@@ -3,7 +3,6 @@ import torch
 def test_model(model, test_dataloader, device, parameters, targets_scaler=None):
     val_loss = 0
     test_targets_loss = {target+"_test_loss": 0 for target in parameters["target_columns"]}
-    model.eval()
     test_targets_unscaled = {target+"_test_unscaled_mae": 0 for target in parameters["target_columns"]}
     test_targets_direction_acc = {target+"_test_direction_acc": 0 for target in parameters["target_columns"]}
 
