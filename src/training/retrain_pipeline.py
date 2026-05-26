@@ -41,15 +41,16 @@ def main():
     #load training data
     df = pd.read_parquet(PROCESSED_DATA_FILE)
     
+    # drop incomplete rows
+    df = df.dropna().reset_index(drop=True)
+        
     # filter data for retraining
     start_date = pd.to_datetime(df['date'].max()) - pd.DateOffset(years=args.train_years)
     df = df[df['date'] >= start_date].reset_index(drop=True)
+
     
     # split train test
     train_df, test_df = split_train_test(df, test_mode='period', test_size=args.test_size)
-
-    # drop incomplete rows
-    train_df = train_df.dropna().reset_index(drop=True)
     
     # get dataset time range for experiment tracking
     start_date = train_df['date'].min().strftime("%Y%m%d")
@@ -101,12 +102,12 @@ def main():
     if best_metrics.get(f'final_{evaluate_target}_test_loss', float('inf')) < old_metrics.get(f'{evaluate_target}_test_loss', float('inf')):
         logger.info(f"New model outperforms the old model on {evaluate_target} test loss. Consider promoting the new model to production.")
         
-        # register the new model in MLflow Model Registry with the same name and a new alias "Challenger"
+        # register the new model in MLflow Model Registry with the same name and a new alias "Champion"
         register_info = mlflow.register_model(model_info.model_uri, name=model_name)
         version = register_info.version
         client = mlflow.tracking.MlflowClient()
-        client.set_registered_model_alias(model_name, "Challenger", version)
-        logger.info(f"Registered model version {version} of {model_name} with alias 'Challenger'")
+        client.set_registered_model_alias(model_name, "Champion", version)
+        logger.info(f"Registered model version {version} of {model_name} with alias 'Champion'")
 
 if __name__ == "__main__":
     main()

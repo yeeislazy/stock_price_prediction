@@ -41,17 +41,26 @@ def request_model( model_name='stock-price-prediction-model', alias='Production'
     
     client = MlflowClient()
     try:
-        model = pyfunc.load_model(model_uri + f"/{alias}")
-        latest_version = MlflowClient().get_latest_versions(model_name, stages=[alias])[0].version
+        model_uri = f"models:/{model_name}@{alias.lower()}"
+        model = pyfunc.load_model(
+            model_uri=model_uri
+        )
+                                  
+        model_version = client.get_model_version_by_alias(
+            model_name,
+            alias.lower()
+        )
+        latest_version = model_version.version
         logger.info(f"Successfully loaded model from {model_uri}")
     except Exception as e:
-        logger.error(f"No {alias} model found at {model_uri}. Trying latest version.")
+        logger.error(f"No {alias} model found at {model_uri}. Trying latest version.\n Error: {e}")
         model = None
     
     if model is None:
         try:
             latest_version = client.get_latest_versions(model_name, stages=["None"])[0].version
-            model = pyfunc.load_model(f"{model_uri}/{latest_version}")
+            model_uri = f"models:/{model_name}/{latest_version}"
+            model = pyfunc.load_model(model_uri)
             logger.info(f"Successfully loaded latest model from {model_uri}/{latest_version}")
         except Exception as e:
             logger.error(f"Failed to load any version of the model from {model_uri}: {e}")

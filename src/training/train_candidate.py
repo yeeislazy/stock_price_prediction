@@ -103,8 +103,7 @@ def train_lstm(parameters,train_df,test_df,feature_columns,target_columns,featur
                 
                 
                 loss_per_target = criterion(outputs, Y_batch)
-                weighted_loss = loss_per_target * weights
-                loss = weighted_loss.sum(dim=1).mean()
+                loss = (loss_per_target * weights).mean()
                 
                 loss.backward()
                 optimizer.step()
@@ -188,8 +187,12 @@ def train_lstm(parameters,train_df,test_df,feature_columns,target_columns,featur
                 model_info = pyfunc.log_model(
                     artifact_path="lstm_model",
                     python_model=LSTMWithScalerWrapper(
-                        features_scaler= features_scaler,feature_columns=feature_columns,
-                        output_size=parameters["output_size"], projection_size=parameters["projection_size"], hidden_size=parameters["hidden_size"], num_layers=parameters["num_layers"], 
+                        features_scaler= features_scaler,
+                        feature_columns=feature_columns,
+                        output_size=parameters["output_size"], 
+                        projection_size=parameters["projection_size"], 
+                        hidden_size=parameters["hidden_size"], 
+                        num_layers=parameters["num_layers"], 
                         seq_len=parameters["seq_len"],
                         targets_scaler=targets_scaler
                         ),

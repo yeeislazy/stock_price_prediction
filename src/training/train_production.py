@@ -25,25 +25,25 @@ def main():
     # argparse for command line arguments
     parser = argparse.ArgumentParser(description='Retrain the stock price prediction model.')
     parser.add_argument('--model_name', type=str, default=model_name, help='Name of the model to retrain')
-    parser.add_argument('--model_tag', type=str, default='Production', help='Tag of the model to retrain')
+    parser.add_argument('--model_alias', type=str, default='Champion', help='Alias of the model to retrain')
     parser.add_argument('--train_years', type=int, default=DEFAULT_TRAIN_YEARS, help='Number of years of data to use for training')
     parser.add_argument('--test_size', type=int, default=DEFAULT_TEST_SIZE, help='Number of days to use for testing')
     
     args = parser.parse_args()
     
     # request model from MLflow
-    tag = args.model_tag
-    _, _, model_params, old_metrics = request_model(model_name=model_name, tags = tag)
+    alias = args.model_alias
+    _, _, model_params, old_metrics = request_model(model_name=model_name, alias = alias)
     
     #load training data
     train_df = pd.read_parquet(PROCESSED_DATA_FILE)
     
+    # drop incomplete rows
+    train_df = train_df.dropna().reset_index(drop=True)
+    
     # filter data for retraining
     start_date = pd.to_datetime(train_df['date'].max()) - pd.DateOffset(years=DEFAULT_TRAIN_YEARS)
     train_df = train_df[train_df['date'] >= start_date].reset_index(drop=True)
-    
-    # drop incomplete rows
-    train_df = train_df.dropna().reset_index(drop=True)
     
     # get dataset time range for experiment tracking
     start_date = train_df['date'].min().strftime("%Y%m%d")
@@ -56,22 +56,21 @@ def main():
 
     features_scaler, targets_scaler = train_scaler(train_df, feature_columns, target_columns=target_columns)
     model_params["scaler"] = "standard_scaler"
-    best_metrics = train_lstm(
+    model_info, _ = train_lstm(
         parameters=model_params,
         train_df=train_df,
         feature_columns=feature_columns,
         target_columns=target_columns,
         features_scaler=features_scaler,
         targets_scaler=targets_scaler,
-        experiment_name=f'{STOCK.lower()}_{tag.lower()}_production',
+        experiment_name=f'{STOCK.lower()}_{alias.lower()}_production',
         run_name=f'production_{STOCK.lower()}_{model_params["model"]}_{end_date}'
     )
     
-    # compare metrics with old model
-    if old_metrics['final_return_2_test_loss'] < best_metrics['final_return_2_test_loss']:
-        logger.info(f"New model outperforms the old model. Old return_2 test loss: {old_metrics['final_return_2_test_loss']}, New return_2 test loss: {best_metrics['final_return_2_test_loss']}")
-    else:
-        logger.info(f"New model does not outperform the old model. Old return_2 test loss: {old_metrics['final_return_2_test_loss']}, New return_2 test loss: {best_metrics['final_return_2_test_loss']}")
-
+    # register model as "Production"
+    registered_model = mlflow.register_model(model_uri=model_info.model_uri, name=model_name)
+    mlflow_client = mlflow.tracking.MlflowClient()
+    mlflow_client.set_registered_model_alias(name=model_name, alias=alias, version=registered_model.version)
+    
 if __name__ == "__main__":
     main()

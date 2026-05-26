@@ -23,7 +23,10 @@ class LSTMWithScalerWrapper(mlflow.pyfunc.PythonModel):
 
     def load_context(self, context):
         # load the model state dict from the artifact path
-        model_state_dict = mlflow.pytorch.load_model(context.artifacts["model_state"])
+        model_state_dict = torch.load(
+                context.artifacts["model_state"],
+                map_location=self.device
+            )
         
         # initialize the LSTM model and load the state dict
         self.model = LSTMModel(input_size=self.input_size, output_size=self.output_size, projection_size=self.projection_size, hidden_size=self.hidden_size, num_layers=self.num_layers)
