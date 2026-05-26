@@ -47,6 +47,9 @@ production-monitor = "monitoring.production_monitor:main"
 where = ["src"]
 include = ["app*", "training*", "data*", "monitoring*", "models*", "utils*", "configuration*"]
 
+[tool.uv]
+package = true
+
 [dependency-groups]
 dev = [
     "ipykernel>=7.2.0",
