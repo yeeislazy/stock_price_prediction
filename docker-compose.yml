@@ -13,3 +13,5 @@ services:
       - ./data:/opt/airflow/project/data
       - ./artifacts:/opt/airflow/project/artifacts
       - ./mlruns:/opt/airflow/project/mlruns
+
+    command: standalone

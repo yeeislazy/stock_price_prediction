@@ -12,12 +12,13 @@ RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 
 ENV PATH="/home/airflow/.local/bin:${PATH}"
 ENV PYTHONPATH="/opt/airflow/project/src"
+ENV PATH="/opt/airflow/project/.venv/bin:${PATH}"
 
 WORKDIR /opt/airflow/project
 
-COPY pyproject.toml uv.lock ./
-COPY src ./src
+COPY --chown=airflow:root pyproject.toml uv.lock ./
+COPY --chown=airflow:root src ./src
 
-RUN uv sync --torch-backend auto
+RUN uv sync
 
-COPY . .
+COPY --chown=airflow:root . .
