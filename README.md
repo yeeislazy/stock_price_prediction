@@ -199,7 +199,7 @@ Workflow:
 ---
 
 # Feature Engineering
-
+![1779868911123](image/README/1779868911123.png)
 Implemented technical indicators:
 
 * Moving Average (MA)
