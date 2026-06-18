@@ -1,13 +1,14 @@
+from datetime import date, datetime
 from pathlib import Path
 
 # stock info
-STOCK = "qqq"
-START_DATE = "2020-01-01"
+STOCK = "0166.kl"
+START_DATE = "2023-01-01"
+TIME_INTERVAL = "1d"
 
 # time range
 DEFAULT_TRAIN_YEARS = 2
 DEFAULT_TEST_SIZE = 14  # days
-
 
 # mlflow uri
 MLFLOW_TRACKING_URI = "https://dagshub.com/yeeislazy/stock_price_prediction.mlflow"
@@ -21,6 +22,18 @@ PROCESSED_DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 RAW_DATA_FILE = RAW_DATA_DIR / f"{STOCK.lower()}.parquet"
 PROCESSED_DATA_FILE = PROCESSED_DATA_DIR / f"{STOCK.lower()}.parquet"
+
+NEWS_DATA_DIR = DATA_ROOT_DIR / "news"
+NEWS_DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+COMPANY_NEWS_DIR = NEWS_DATA_DIR / "company"
+COMPANY_NEWS_DIR.mkdir(parents=True, exist_ok=True)
+INDUSTRY_NEWS_DIR = NEWS_DATA_DIR / "industry"
+INDUSTRY_NEWS_DIR.mkdir(parents=True, exist_ok=True)
+
+COMPANY_NEWS_FILE = COMPANY_NEWS_DIR / f"{STOCK.lower()}_company_news.parquet"
+INDUSTRY_NEWS_FILE = INDUSTRY_NEWS_DIR / f"{STOCK.lower()}_industry_news.parquet"
+
 
 # artifacts paths
 ARTIFACTS_DIR = Path(__file__).parent.parent.parent / "artifacts" / STOCK.lower()
@@ -52,3 +65,27 @@ CANDIDATE_PARAMS = {
             "lr": [1e-4 , 1e-3]
     }
 }
+
+# search keyword
+STOCKS_KEYWORDS = {
+    "QQQ": {
+        "company_keywords":
+            ["Invesco QQQ", "QQQ", "NVIDIA", "Microsoft", "Apple", "Amazon"]
+    },
+    "AAPL": {
+        "company_keywords":
+            ["Apple", "AAPL"]
+    },
+    "NVDA": {
+        "company_keywords":
+            ["NVIDIA", "NVDA"]
+    },
+    "0166.KL": {
+        "company_keywords":
+            ["Inari Amertron", "Inari Amertron Berhad", "0166.KL"],
+        "industry_keywords":
+            ["semiconductor", "OSAT", "photonics", "optical transceiver", "Broadcom"]
+    }
+}
+
+SEARCH_KEYWORDS = STOCKS_KEYWORDS[STOCK.upper()]
