@@ -14,6 +14,7 @@ The system automates:
 ---
 
 # Features
+<img width="1015" height="677" alt="image" src="https://github.com/user-attachments/assets/10cba21f-4e1f-497d-86c1-125b1db25ce5" />
 
 ## Multi-Horizon Forecasting
 
