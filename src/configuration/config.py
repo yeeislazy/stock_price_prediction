@@ -30,9 +30,13 @@ COMPANY_NEWS_DIR = NEWS_DATA_DIR / "company"
 COMPANY_NEWS_DIR.mkdir(parents=True, exist_ok=True)
 INDUSTRY_NEWS_DIR = NEWS_DATA_DIR / "industry"
 INDUSTRY_NEWS_DIR.mkdir(parents=True, exist_ok=True)
+SIGNAL_DATA_DIR = DATA_ROOT_DIR / "signal"
+SIGNAL_DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 COMPANY_NEWS_FILE = COMPANY_NEWS_DIR / f"{STOCK.lower()}_company_news.parquet"
 INDUSTRY_NEWS_FILE = INDUSTRY_NEWS_DIR / f"{STOCK.lower()}_industry_news.parquet"
+SIGNAL_DATA_FILE = SIGNAL_DATA_DIR / f"{STOCK.lower()}_signal.parquet"
+
 
 
 # artifacts paths
@@ -47,7 +51,7 @@ TARGET_SCALER_PATH = ARTIFACTS_DIR / "target_scaler.pkl"
 CANDIDATE_PARAMS = {
     "features":{
         "base_features": ["open", "high", "low", "close", "volume", "year", "month", "day"],
-        "extra_features": [ "ma20", "rsi14", "ATR" ]
+        "extra_features": [ "dividends" , "ma20", "rsi14", "ATR" ]
     },
     "targets": {
         "columns": ["return_2", "return_5", "return_14"],
@@ -89,3 +93,5 @@ STOCKS_KEYWORDS = {
 }
 
 SEARCH_KEYWORDS = STOCKS_KEYWORDS[STOCK.upper()]
+
+NEWS_ANALYSIS_PERIOD = 7  # days

@@ -13,6 +13,7 @@ dependencies = [
     "flask>=3.1.3",
     "gdeltdoc>=1.12.0",
     "google>=3.0.0",
+    "google-genai>=2.9.0",
     "mlflow-skinny==2.13.2",
     "pandas>=3.0.2",
     "pyarrow>=24.0.0",
@@ -46,6 +47,7 @@ train-candidates = "training.train_candidate:main"
 train-production = "training.train_production:main"
 retrain-pipeline = "training.retrain_pipeline:main"
 production-monitor = "monitoring.production_monitor:main"
+generate-signal = "data.processing.generate_signal:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

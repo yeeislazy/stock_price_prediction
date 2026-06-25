@@ -1,6 +1,6 @@
 import pandas as pd
 from pathlib import Path
-from configuration.config import STOCK, RAW_DATA_DIR, PROCESSED_DATA_DIR
+from configuration.config import RAW_DATA_FILE,PROCESSED_DATA_FILE
 
 
 def extract_date_features(df: pd.DataFrame) -> pd.DataFrame:
@@ -53,11 +53,13 @@ def split_data(df: pd.DataFrame, test_size=0.2):
     test_df = df.iloc[train_size:]
     return train_df, test_df
 
+def get_signal():
+
 def main():
-    df = pd.read_parquet(RAW_DATA_DIR / f"{STOCK.lower()}.parquet")
+    df = pd.read_parquet(RAW_DATA_FILE)
     df = compute_pipeline(df)
     df = compute_return_ratio(df)
-    df.to_parquet(PROCESSED_DATA_DIR / f"{STOCK.lower()}.parquet", index=False)
+    df.to_parquet(PROCESSED_DATA_FILE, index=False)
 
 
 if __name__ == "__main__":
