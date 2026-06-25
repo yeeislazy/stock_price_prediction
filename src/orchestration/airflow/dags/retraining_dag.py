@@ -24,6 +24,14 @@ with DAG(
         uv run download-update-data
         """
     )
+    
+    generate_signal = BashOperator(
+        task_id="generate_signal",
+        bash_command="""
+        cd /opt/airflow/project &&
+        uv run generate-signal
+        """
+    )
 
     process_data = BashOperator(
         task_id="process_data",
@@ -45,6 +53,7 @@ with DAG(
 
     (
         download_data
+        >> generate_signal
         >> process_data
         >> retrain_pipeline
     )

@@ -50,7 +50,7 @@ TARGET_SCALER_PATH = ARTIFACTS_DIR / "target_scaler.pkl"
 # candidate model parameters
 CANDIDATE_PARAMS = {
     "features":{
-        "base_features": ["open", "high", "low", "close", "volume", "year", "month", "day"],
+        "base_features": ["open", "high", "low", "close", "volume", "year", "month", "day","return_2_signal", "return_5_signal", "return_14_signal", "confidence"],
         "extra_features": [ "dividends" , "ma20", "rsi14", "ATR" ]
     },
     "targets": {
@@ -59,7 +59,7 @@ CANDIDATE_PARAMS = {
     },
     "model": {
             "name": "LSTMModel",
-            "input_size": 8,
+            "input_size": 12,
             "output_size": 3,
             "projection_size": [32, 64, 128],
             "hidden_size": [64, 128, 256],
