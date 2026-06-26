@@ -83,7 +83,7 @@ def collect_stock_price_dividend(start_date: str = START_DATE) -> pd.DataFrame:
         df = pd.merge(stock_df, dividend_df, on="date", how="left")
     else:
         df = stock_df.copy()
-        df["dividend"] = None
+        df["dividends"] = None
 
     return df
 

@@ -50,8 +50,8 @@ TARGET_SCALER_PATH = ARTIFACTS_DIR / "target_scaler.pkl"
 # candidate model parameters
 CANDIDATE_PARAMS = {
     "features":{
-        "base_features": ["open", "high", "low", "close", "volume", "year", "month", "day","return_2_signal", "return_5_signal", "return_14_signal", "confidence"],
-        "extra_features": [ "dividends" , "ma20", "rsi14", "ATR" ]
+        "base_features": ["open", "high", "low", "close", "volume", "year", "month", "day"],
+        "extra_features": [ "dividends", "return_2_signal", "return_5_signal", "return_14_signal", "confidence" , "ma20", "rsi14", "ATR" ]
     },
     "targets": {
         "columns": ["return_2", "return_5", "return_14"],

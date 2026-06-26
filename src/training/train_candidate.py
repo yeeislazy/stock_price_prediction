@@ -239,6 +239,7 @@ def main():
     df = pd.read_parquet(PROCESSED_DATA_FILE)
     
     start_date = pd.to_datetime(df['date'].max()) - pd.DateOffset(years=DEFAULT_TRAIN_YEARS)
+    start_date = pd.to_datetime(start_date.date())
     df = df[df['date'] >= start_date].reset_index(drop=True)
     
     train_df, test_df = split_train_test(df, test_mode='period', test_size=14)
@@ -300,7 +301,7 @@ def main():
             features_scaler=features_scaler,
             targets_scaler=targets_scaler,
             test_df=test_df,
-            experiment_name=f'{STOCK.lower()}_params_experiment'
+            experiment_name=f'{STOCK.lower()}_candidate_model_training'
         )
 
 if __name__ == "__main__":

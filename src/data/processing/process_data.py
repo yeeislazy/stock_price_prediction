@@ -10,7 +10,6 @@ def extract_date_features(df: pd.DataFrame) -> pd.DataFrame:
     df['year'] = df['date'].dt.year
     df['month'] = df['date'].dt.month
     df['day'] = df['date'].dt.day
-    df['date'] =    df['date'].dt.date
     return df
 
 def compute_ma(df: pd.DataFrame, window: int=20) -> pd.DataFrame:
@@ -41,6 +40,7 @@ def compute_pipeline(df: pd.DataFrame) -> pd.DataFrame:
     df = compute_ma(df)
     df = compute_rsi(df)
     df = compute_atr(df)
+    df['dividends'] = df['dividends'].fillna(0.0)
     df = df.ffill()
     return df
 
@@ -64,10 +64,11 @@ def concat_signal(df: pd.DataFrame) -> pd.DataFrame:
     signal_df = signal_df.drop_duplicates(subset=['stock', 'date'], keep='last')
 
     signal_df = signal_df[['date', 'return_2_signal', 'return_5_signal', 'return_14_signal', 'confidence']]
-    signal_df['date'] = pd.to_datetime(signal_df['date']).dt.date
+    signal_df['date'] = pd.to_datetime(pd.to_datetime(signal_df['date']).dt.date)
     df = pd.merge(df, signal_df, on='date', how='left')
     
     return df
+
 
 def main():
     df = pd.read_parquet(RAW_DATA_FILE)
