@@ -252,6 +252,12 @@ def main():
     extra_features_combinations = [[f] for f in extra_features]
     for l in range(2, len(extra_features) + 1):
         extra_features_combinations.extend(list(combinations(extra_features, l)))
+    
+    signal_features = try_parameters["features"]["signal_features"]
+    extra_features = extra_features_combinations.copy()
+    for feature_combination in extra_features:
+        extra_features_combinations.append(feature_combination + signal_features)
+        
 
     base_features = try_parameters["features"]["base_features"]
     
